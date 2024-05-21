@@ -3,6 +3,10 @@ package com.example.demo.repo;
 import com.example.demo.entities.Product;
 import org.springframework.data.jpa.repository.JpaRepository;
 
-//JpaRepository est une interface generique de spring data
-public interface ProductRepo extends JpaRepository<Product,Long> {
+import java.util.List;
+
+public interface ProductRepo extends JpaRepository<Product, Long> {
+
+    //creer des methodes a l'aide de conventions
+    public List<Product> findByNameContains(String name);
 }
