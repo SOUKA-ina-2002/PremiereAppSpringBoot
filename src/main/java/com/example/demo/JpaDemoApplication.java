@@ -35,6 +35,13 @@ public class JpaDemoApplication implements CommandLineRunner {
 		List<Product> lap=productRepo.findByNameContains("lap");
 		lap.forEach(product -> {
 			System.out.println(product.getName());
+			System.out.println("*********************");
+		});
+
+
+		List<Product> reqtResult =productRepo.search("lap",4000);
+		reqtResult.forEach(product -> {
+			System.out.println(product.getName());
 		});
 
 	}
